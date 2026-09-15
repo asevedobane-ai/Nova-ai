@@ -1,6 +1,17 @@
-/* =========================================================
-   NOVA — GLOBAL
-========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+:root {
+  --bg: #08090b;
+  --surface: #0d0f12;
+  --surface-2: #111318;
+  --surface-3: #16191e;
+  --border: #24282f;
+  --border-light: #30353d;
+  --text: #f4f5f7;
+  --muted: #9298a2;
+  --muted-2: #666d77;
+  --accent: #e9ebef;
+}
 
 * {
   box-sizing: border-box;
@@ -12,16 +23,15 @@ html {
 
 body {
   margin: 0;
-  background: #0b0c0e;
-  color: #f2f3f5;
-  font-family: Inter, Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "DM Sans", sans-serif;
   overflow-x: hidden;
 }
 
 button,
 input,
-textarea,
-select {
+textarea {
   font: inherit;
 }
 
@@ -34,42 +44,26 @@ a {
   text-decoration: none;
 }
 
-/* =========================================================
-   NAVBAR
-========================================================= */
+/* =========================
+   BRAND
+========================= */
 
-.navbar {
-  width: 100%;
-  height: 72px;
-  padding: 0 6%;
+.brand,
+.workspace-brand,
+.footer-brand,
+.window-brand {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border-bottom: 1px solid #202226;
-  background: rgba(11, 12, 14, 0.94);
-  position: relative;
-  z-index: 10;
+  gap: 10px;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  font-size: 19px;
-  font-weight: 700;
-  letter-spacing: -0.4px;
+.brand-name {
+  font-family: "Manrope", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.5px;
 }
 
-.logo {
-  width: 34px;
-  height: 34px;
-  border: 2px solid #e7e9ed;
-  border-radius: 9px;
-  display: grid;
-  place-items: center;
-  position: relative;
-}
-
-.logo::before {
-  content: "∞";
-  font-size: 21
+.nova-mark,
+.mini-mark,
+.welcome-mark,
+.large-mark
