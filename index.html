@@ -1,110 +1,276 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>
+function openWorkspace() {
+  const landing = document.getElementById("landing");
+  const workspace = document.getElementById("workspace");
 
-  <title>NOVA — AI that works with you</title>
+  if (landing) {
+    landing.style.display = "none";
+  }
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  if (workspace) {
+    workspace.style.display = "flex";
+    workspace.classList.add("active");
+  }
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-
-  <link rel="stylesheet" href="app.css">
-</head>
-
-<body>
-
-  <!-- =========================
-       LANDING PAGE
-  ========================== -->
-
-  <div id="landing">
-
-    <header class="navbar">
-
-      <a href="#" class="brand">
-
-        <div class="nova-mark">
-          <span></span>
-        </div>
-
-        <span class="brand-name">NOVA</span>
-
-      </a>
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
 
 
-      <nav class="nav-center">
+function closeWorkspace() {
+  const landing = document.getElementById("landing");
+  const workspace = document.getElementById("workspace");
 
-        <a href="#capabilities">Capabilities</a>
-        <a href="#experience">Experience</a>
-        <a href="#about">About</a>
+  if (workspace) {
+    workspace.style.display = "none";
+    workspace.classList.remove("active");
+  }
 
-      </nav>
+  if (landing) {
+    landing.style.display = "block";
+  }
 
-
-      <div class="nav-actions">
-
-        <button
-          class="nav-login"
-          onclick="openWorkspace()"
-        >
-          Open NOVA
-        </button>
-
-        <button
-          class="nav-start"
-          onclick="openWorkspace()"
-        >
-          Get started
-          <span>↗</span>
-        </button>
-
-      </div>
-
-    </header>
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+}
 
 
-    <!-- HERO -->
+function toggleSidebar() {
+  const sidebar = document.querySelector(".workspace-sidebar");
 
-    <main>
-
-      <section class="hero">
-
-        <div class="hero-content">
-
-          <div class="status-pill">
-
-            <span class="status-dot"></span>
-
-            NOVA is ready
-
-          </div>
+  if (sidebar) {
+    sidebar.classList.toggle("open");
+  }
+}
 
 
-          <h1>
-            Intelligence,
-            <span>without the noise.</span>
-          </h1>
+function scrollToSection(id) {
+  const section = document.getElementById(id);
+
+  if (section) {
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  }
+}
 
 
-          <p class="hero-description">
+function useSuggestion(text) {
+  const input = document.getElementById("messageInput");
 
-            NOVA brings writing, analysis, coding, brainstorming,
-            and everyday questions into one focused AI workspace.
+  if (!input) return;
 
-          </p>
+  input.value = text;
+  input.focus();
+
+  input.style.height = "auto";
+  input.style.height = input.scrollHeight + "px";
+}
 
 
-          <div class="hero-actions">
+function newChat() {
+  const messages = document.getElementById("messages");
+  const welcome = document.getElementById("welcome");
+  const input = document.getElementById("messageInput");
 
-            <button
-              class="hero-primary"
-              onclick="openWorkspace()"
-            >
+  if (messages) {
+    messages.innerHTML = "";
+  }
 
-              Start creating
+  if (welcome) {
+    welcome.style.display = "block";
+  }
+
+  if (input) {
+    input.value = "";
+    input.style.height = "auto";
+    input.focus();
+  }
+}
+
+
+function filterHistory() {
+  const searchInput = document.getElementById("historySearch");
+  const historyItems = document.querySelectorAll(".history-item");
+
+  if (!searchInput) return;
+
+  const query = searchInput.value.toLowerCase().trim();
+
+  historyItems.forEach(item => {
+    const text = item.textContent.toLowerCase();
+
+    if (text.includes(query)) {
+      item.style.display = "";
+    } else {
+      item.style.display = "none";
+    }
+  });
+}
+
+
+function escapeHTML(text) {
+  const div = document.createElement("div");
+  div.textContent = text;
+  return div.innerHTML;
+}
+
+
+function addMessage(text, type) {
+  const messages = document.getElementById("messages");
+
+  if (!messages) return;
+
+  const message = document.createElement("div");
+
+  message.className = `message ${type}`;
+
+  message.innerHTML = `
+    <div class="message-content">
+      ${escapeHTML(text)}
+    </div>
+  `;
+
+  messages.appendChild(message);
+
+  messages.scrollTop = messages.scrollHeight;
+}
+
+
+async function sendMessage() {
+  const input = document.getElementById("messageInput");
+  const sendButton = document.getElementById("sendButton");
+  const welcome = document.getElementById("welcome");
+
+  if (!input) return;
+
+  const message = input.value.trim();
+
+  if (!message) return;
+
+  if (welcome) {
+    welcome.style.display = "none";
+  }
+
+  addMessage(message, "user");
+
+  input.value = "";
+  input.style.height = "auto";
+
+  if (sendButton) {
+    sendButton.disabled = true;
+  }
+
+  try {
+    const response = await fetch("/Api/chat", {
+      method: "POST",
+
+      headers: {
+        "Content-Type": "application/json"
+      },
+
+      body: JSON.stringify({
+        message: message
+      })
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(data.error || "NOVA couldn't process that request.");
+    }
+
+    if (data.reply) {
+      addMessage(data.reply, "assistant");
+    } else {
+      addMessage(
+        "NOVA didn't receive a response. Please try again.",
+        "assistant"
+      );
+    }
+
+  } catch (error) {
+    console.error("NOVA error:", error);
+
+    addMessage(
+      "Something went wrong connecting to NOVA. Please try again.",
+      "assistant"
+    );
+
+  } finally {
+    if (sendButton) {
+      sendButton.disabled = false;
+    }
+
+    input.focus();
+  }
+}
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  /*
+    Make every button using openWorkspace()
+    work even if the inline onclick doesn't fire.
+  */
+
+  document
+    .querySelectorAll('[onclick="openWorkspace()"]')
+    .forEach(button => {
+
+      button.addEventListener("click", openWorkspace);
+
+    });
+
+
+  const input = document.getElementById("messageInput");
+
+  if (input) {
+
+    input.addEventListener("keydown", event => {
+
+      if (
+        event.key === "Enter" &&
+        !event.shiftKey
+      ) {
+
+        event.preventDefault();
+
+        sendMessage();
+
+      }
+
+    });
+
+
+    input.addEventListener("input", () => {
+
+      input.style.height = "auto";
+
+      input.style.height =
+        input.scrollHeight + "px";
+
+    });
+
+  }
+
+
+  const searchInput =
+    document.getElementById("historySearch");
+
+  if (searchInput) {
+
+    searchInput.addEventListener(
+      "input",
+      filterHistory
+    );
+
+  }
+
+});
+</script>
