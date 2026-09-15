@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     try {
         const { message } = req.body || {};
 
-        if (!message?.trim()) {
+        if (!message || typeof message !== "string" || !message.trim()) {
             return res.status(400).json({
                 error: "Message is required."
             });
@@ -23,14 +23,13 @@ export default async function handler(req, res) {
         }
 
         const response = await fetch(
-            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(apiKey)}`,
+            "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent",
             {
                 method: "POST",
-
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type": "application/json",
+                    "x-goog-api-key": apiKey
                 },
-
                 body: JSON.stringify({
                     contents: [
                         {
@@ -51,7 +50,7 @@ export default async function handler(req, res) {
             console.error("Gemini API error:", data);
 
             return res.status(500).json({
-                error: "Gemini API request failed."
+                error: "Gemini request failed."
             });
         }
 
@@ -62,7 +61,7 @@ export default async function handler(req, res) {
 
         if (!reply) {
             return res.status(500).json({
-                error: "Gemini returned no response."
+                error: "Gemini returned an empty response."
             });
         }
 
@@ -74,7 +73,7 @@ export default async function handler(req, res) {
         console.error("Server error:", error);
 
         return res.status(500).json({
-            error: "NOVA couldn't connect to the AI server."
+            error: "Something went wrong."
         });
     }
 }
