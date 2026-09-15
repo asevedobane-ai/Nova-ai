@@ -3,7 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>NOVA — AI that works with you</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
   <link rel="stylesheet" href="app.css">
 </head>
 
@@ -13,262 +23,88 @@
        LANDING PAGE
   ========================== -->
 
-  <div id="landing" class="landing">
+  <div id="landing">
 
-    <nav class="navbar">
+    <header class="navbar">
 
       <a href="#" class="brand">
-        <span class="logo"></span>
-        <span>NOVA</span>
+
+        <div class="nova-mark">
+          <span></span>
+        </div>
+
+        <span class="brand-name">NOVA</span>
+
       </a>
 
-      <div class="nav-links">
-        <a href="#tools">AI Tools</a>
+
+      <nav class="nav-center">
+
+        <a href="#capabilities">Capabilities</a>
+        <a href="#experience">Experience</a>
         <a href="#about">About</a>
-        <a href="#" onclick="openWorkspace(); return false;">Open NOVA</a>
+
+      </nav>
+
+
+      <div class="nav-actions">
+
+        <button
+          class="nav-login"
+          onclick="openWorkspace()"
+        >
+          Open NOVA
+        </button>
+
+        <button
+          class="nav-start"
+          onclick="openWorkspace()"
+        >
+          Get started
+          <span>↗</span>
+        </button>
+
       </div>
 
-    </nav>
+    </header>
 
+
+    <!-- HERO -->
 
     <main>
 
-      <!-- HERO -->
-
       <section class="hero">
 
-        <div class="eyebrow">
-          Intelligent tools. One workspace.
-        </div>
+        <div class="hero-content">
 
-        <h1>
-          AI that <span>works</span><br>
-          with you.
-        </h1>
+          <div class="status-pill">
 
-        <p>
-          NOVA helps you ask questions, create content,
-          analyze information, brainstorm ideas, understand
-          complex topics, and get more done.
-        </p>
+            <span class="status-dot"></span>
 
-        <div class="hero-buttons">
-
-          <button
-            class="primary-button"
-            onclick="openWorkspace()"
-          >
-            Start Creating
-          </button>
-
-          <button
-            class="secondary-button"
-            onclick="scrollToTools()"
-          >
-            Explore AI
-          </button>
-
-        </div>
-
-
-        <!-- PRODUCT PREVIEW -->
-
-        <div class="preview">
-
-          <div class="preview-top">
-            <span class="preview-dot"></span>
-            <span class="preview-dot"></span>
-            <span class="preview-dot"></span>
-          </div>
-
-          <div class="preview-body">
-
-            <div class="preview-sidebar">
-
-              <div class="preview-line"></div>
-              <div class="preview-line short"></div>
-              <div class="preview-line"></div>
-              <div class="preview-line short"></div>
-              <div class="preview-line"></div>
-
-            </div>
-
-            <div class="preview-chat">
-
-              <div class="preview-message">
-
-                <strong>NOVA</strong>
-
-                <br><br>
-
-                Your ideas don't have to start perfectly.
-                Ask a question, describe what you're working
-                on, or simply start typing.
-
-              </div>
-
-            </div>
+            NOVA is ready
 
           </div>
 
-        </div>
 
-      </section>
+          <h1>
+            Intelligence,
+            <span>without the noise.</span>
+          </h1>
 
 
-      <!-- TOOLS -->
+          <p class="hero-description">
 
-      <section
-        id="tools"
-        class="tools"
-      >
+            NOVA brings writing, analysis, coding, brainstorming,
+            and everyday questions into one focused AI workspace.
 
-        <div class="section-heading">
-
-          <h2>One AI. Many ways to use it.</h2>
-
-          <p>
-            Built for creating, learning, solving,
-            and exploring.
           </p>
 
-        </div>
 
+          <div class="hero-actions">
 
-        <div class="tool-grid">
+            <button
+              class="hero-primary"
+              onclick="openWorkspace()"
+            >
 
-          <article class="tool-card">
-            <h3>Writing</h3>
-            <p>
-              Draft, rewrite, improve, and organize
-              your ideas.
-            </p>
-          </article>
-
-
-          <article class="tool-card">
-            <h3>Brainstorming</h3>
-            <p>
-              Turn rough ideas into concepts,
-              plans, and possibilities.
-            </p>
-          </article>
-
-
-          <article class="tool-card">
-            <h3>Code</h3>
-            <p>
-              Understand code, debug problems,
-              and build projects.
-            </p>
-          </article>
-
-
-          <article class="tool-card">
-            <h3>Analysis</h3>
-            <p>
-              Break down information and find
-              useful patterns and insights.
-            </p>
-          </article>
-
-
-          <article class="tool-card">
-            <h3>Explain</h3>
-            <p>
-              Make complicated subjects easier
-              to understand.
-            </p>
-          </article>
-
-
-          <article class="tool-card">
-            <h3>Translate</h3>
-            <p>
-              Translate text while keeping the
-              meaning and context intact.
-            </p>
-          </article>
-
-        </div>
-
-      </section>
-
-
-      <!-- ABOUT -->
-
-      <section
-        id="about"
-        class="tools"
-      >
-
-        <div class="section-heading">
-
-          <h2>Built around your workflow.</h2>
-
-          <p>
-            NOVA is designed to feel like a workspace,
-            not just another chat box.
-          </p>
-
-        </div>
-
-      </section>
-
-    </main>
-
-
-    <footer>
-      NOVA — AI that works with you.
-    </footer>
-
-  </div>
-
-
-
-  <!-- =========================
-       NOVA WORKSPACE
-  ========================== -->
-
-  <div
-    id="workspace"
-    class="workspace"
-  >
-
-    <!-- SIDEBAR -->
-
-    <aside
-      id="sidebar"
-      class="sidebar"
-    >
-
-      <div class="sidebar-top">
-
-        <div class="sidebar-brand">
-          <span class="sidebar-logo"></span>
-          <span>NOVA</span>
-        </div>
-
-
-        <button
-          class="new-chat"
-          onclick="newChat()"
-        >
-          + New chat
-        </button>
-
-
-        <input
-          id="searchInput"
-          class="search-box"
-          type="text"
-          placeholder="Search conversations..."
-          oninput="filterHistory()"
-        >
-
-      </div>
-
-
-      <div class="history">
-
-        <div class="history-title">
+              Start creating
