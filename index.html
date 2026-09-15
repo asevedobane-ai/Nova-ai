@@ -2,192 +2,109 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="theme-color"
-    content="#09090a"
-  >
-
-  <meta
-    name="description"
-    content="NOVA — AI that works with you."
-  >
-
-  <title>NOVA — AI that works with you.</title>
-
-  <!-- NOVA WORKSPACE STYLES -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NOVA — AI that works with you</title>
   <link rel="stylesheet" href="app.css">
 </head>
 
 <body>
 
-  <!-- ==================================================
+  <!-- =========================
        LANDING PAGE
-  ================================================== -->
+  ========================== -->
 
-  <div id="landingPage">
-
-    <!-- NAVBAR -->
+  <div id="landing" class="landing">
 
     <nav class="navbar">
 
-      <div class="brand">
-
-        <svg
-          class="logo"
-          viewBox="0 0 100 100"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-
-          <path
-            class="logo-hex"
-            d="
-              M50 5
-              L89 27.5
-              L89 72.5
-              L50 95
-              L11 72.5
-              L11 27.5
-              Z
-            "
-          />
-
-          <path
-            class="logo-loop"
-            d="
-              M31 50
-              C31 39 42 34 50 43
-              C58 52 69 47 69 38
-            "
-          />
-
-          <path
-            class="logo-loop"
-            d="
-              M31 62
-              C31 73 42 78 50 69
-              C58 60 69 65 69 56
-            "
-          />
-
-        </svg>
-
+      <a href="#" class="brand">
+        <span class="logo"></span>
         <span>NOVA</span>
+      </a>
 
-      </div>
-
-
-      <div class="nav-actions">
-
-        <button
-          class="nav-button"
-          onclick="scrollToTools()"
-        >
-          Explore
-        </button>
-
-        <button
-          class="nav-button primary"
-          onclick="openWorkspace()"
-        >
-          Start Creating
-        </button>
-
+      <div class="nav-links">
+        <a href="#tools">AI Tools</a>
+        <a href="#about">About</a>
+        <a href="#" onclick="openWorkspace(); return false;">Open NOVA</a>
       </div>
 
     </nav>
 
 
-    <!-- HERO -->
-
     <main>
 
-      <section class="landing">
+      <!-- HERO -->
 
-        <div class="hero">
+      <section class="hero">
 
-          <div class="eyebrow">
+        <div class="eyebrow">
+          Intelligent tools. One workspace.
+        </div>
 
-            <span class="eyebrow-dot"></span>
+        <h1>
+          AI that <span>works</span><br>
+          with you.
+        </h1>
 
-            Your AI workspace
+        <p>
+          NOVA helps you ask questions, create content,
+          analyze information, brainstorm ideas, understand
+          complex topics, and get more done.
+        </p>
 
+        <div class="hero-buttons">
+
+          <button
+            class="primary-button"
+            onclick="openWorkspace()"
+          >
+            Start Creating
+          </button>
+
+          <button
+            class="secondary-button"
+            onclick="scrollToTools()"
+          >
+            Explore AI
+          </button>
+
+        </div>
+
+
+        <!-- PRODUCT PREVIEW -->
+
+        <div class="preview">
+
+          <div class="preview-top">
+            <span class="preview-dot"></span>
+            <span class="preview-dot"></span>
+            <span class="preview-dot"></span>
           </div>
 
+          <div class="preview-body">
 
-          <h1>
-            AI that
-            <span>works</span>
-            with you.
-          </h1>
+            <div class="preview-sidebar">
 
-
-          <p class="hero-description">
-
-            Ask questions, create content,
-            analyze information, brainstorm ideas,
-            write code, and turn your thoughts
-            into something useful.
-
-          </p>
-
-
-          <div class="hero-actions">
-
-            <button
-              class="hero-button primary"
-              onclick="openWorkspace()"
-            >
-              Start Creating
-            </button>
-
-            <button
-              class="hero-button"
-              onclick="scrollToTools()"
-            >
-              Explore AI
-            </button>
-
-          </div>
-
-
-          <!-- PREVIEW -->
-
-          <div class="preview">
-
-            <div class="preview-top">
-
-              <span class="window-dot"></span>
-              <span class="window-dot"></span>
-              <span class="window-dot"></span>
+              <div class="preview-line"></div>
+              <div class="preview-line short"></div>
+              <div class="preview-line"></div>
+              <div class="preview-line short"></div>
+              <div class="preview-line"></div>
 
             </div>
 
-
-            <div class="preview-content">
+            <div class="preview-chat">
 
               <div class="preview-message">
 
-                <div class="preview-avatar">
-                  ✦
-                </div>
+                <strong>NOVA</strong>
 
-                <p>
-                  NOVA is ready to help you think,
-                  create, understand, and get things done.
-                </p>
+                <br><br>
 
-              </div>
+                Your ideas don't have to start perfectly.
+                Ask a question, describe what you're working
+                on, or simply start typing.
 
-
-              <div class="preview-input">
-                Ask NOVA anything...
               </div>
 
             </div>
@@ -199,95 +116,100 @@
       </section>
 
 
-      <!-- AI TOOLS -->
+      <!-- TOOLS -->
 
       <section
-        class="tools"
         id="tools"
+        class="tools"
       >
 
-        <h2 class="section-title">
-          Built for more than conversation.
-        </h2>
+        <div class="section-heading">
 
-        <p class="section-description">
-          NOVA is designed as an AI workspace,
-          not just a chatbot.
-        </p>
+          <h2>One AI. Many ways to use it.</h2>
+
+          <p>
+            Built for creating, learning, solving,
+            and exploring.
+          </p>
+
+        </div>
 
 
         <div class="tool-grid">
 
-          <div class="tool-card">
-
-            <div class="tool-icon">
-              ✎
-            </div>
-
-            <h3>
-              Writing
-            </h3>
-
+          <article class="tool-card">
+            <h3>Writing</h3>
             <p>
-              Draft, rewrite, improve,
-              and organize your ideas.
+              Draft, rewrite, improve, and organize
+              your ideas.
             </p>
+          </article>
 
-          </div>
+
+          <article class="tool-card">
+            <h3>Brainstorming</h3>
+            <p>
+              Turn rough ideas into concepts,
+              plans, and possibilities.
+            </p>
+          </article>
 
 
-          <div class="tool-card">
-
-            <div class="tool-icon">
-              ⌘
-            </div>
-
-            <h3>
-              Code
-            </h3>
-
+          <article class="tool-card">
+            <h3>Code</h3>
             <p>
               Understand code, debug problems,
               and build projects.
             </p>
+          </article>
 
-          </div>
 
-
-          <div class="tool-card">
-
-            <div class="tool-icon">
-              ◇
-            </div>
-
-            <h3>
-              Brainstorming
-            </h3>
-
+          <article class="tool-card">
+            <h3>Analysis</h3>
             <p>
-              Turn rough ideas into useful
-              concepts and plans.
+              Break down information and find
+              useful patterns and insights.
             </p>
+          </article>
 
-          </div>
 
-
-          <div class="tool-card">
-
-            <div class="tool-icon">
-              ◎
-            </div>
-
-            <h3>
-              Analysis
-            </h3>
-
+          <article class="tool-card">
+            <h3>Explain</h3>
             <p>
-              Break down information
-              and find what matters.
+              Make complicated subjects easier
+              to understand.
             </p>
+          </article>
 
-          </div>
+
+          <article class="tool-card">
+            <h3>Translate</h3>
+            <p>
+              Translate text while keeping the
+              meaning and context intact.
+            </p>
+          </article>
+
+        </div>
+
+      </section>
+
+
+      <!-- ABOUT -->
+
+      <section
+        id="about"
+        class="tools"
+      >
+
+        <div class="section-heading">
+
+          <h2>Built around your workflow.</h2>
+
+          <p>
+            NOVA is designed to feel like a workspace,
+            not just another chat box.
+          </p>
 
         </div>
 
@@ -303,9 +225,10 @@
   </div>
 
 
-  <!-- ==================================================
+
+  <!-- =========================
        NOVA WORKSPACE
-  ================================================== -->
+  ========================== -->
 
   <div
     id="workspace"
@@ -322,673 +245,30 @@
       <div class="sidebar-top">
 
         <div class="sidebar-brand">
-
-          <svg
-            class="sidebar-logo"
-            viewBox="0 0 100 100"
-            fill="none"
-          >
-
-            <path
-              class="logo-hex"
-              d="
-                M50 5
-                L89 27.5
-                L89 72.5
-                L50 95
-                L11 72.5
-                L11 27.5
-                Z
-              "
-            />
-
-            <path
-              class="logo-loop"
-              d="
-                M31 50
-                C31 39 42 34 50 43
-                C58 52 69 47 69 38
-              "
-            />
-
-            <path
-              class="logo-loop"
-              d="
-                M31 62
-                C31 73 42 78 50 69
-                C58 60 69 65 69 56
-              "
-            />
-
-          </svg>
-
-          NOVA
-
+          <span class="sidebar-logo"></span>
+          <span>NOVA</span>
         </div>
+
+
+        <button
+          class="new-chat"
+          onclick="newChat()"
+        >
+          + New chat
+        </button>
+
+
+        <input
+          id="searchInput"
+          class="search-box"
+          type="text"
+          placeholder="Search conversations..."
+          oninput="filterHistory()"
+        >
 
       </div>
 
 
-      <!-- NEW CHAT -->
-
-      <button
-        class="new-chat"
-        onclick="newChat()"
-      >
-        + New chat
-      </button>
-
-
-      <!-- SEARCH -->
-
-      <input
-        id="searchChats"
-        class="search-box"
-        type="search"
-        placeholder="Search conversations..."
-      >
-
-
-      <!-- HISTORY -->
-
-      <div
-        id="history"
-        class="history"
-      >
+      <div class="history">
 
         <div class="history-title">
-          Recent
-        </div>
-
-      </div>
-
-
-      <!-- SIDEBAR BOTTOM -->
-
-      <div class="sidebar-bottom">
-
-        <button
-          class="sidebar-button"
-        >
-          ⚙ Settings
-        </button>
-
-        <button
-          class="sidebar-button"
-          onclick="closeWorkspace()"
-        >
-          ← Back to NOVA
-        </button>
-
-      </div>
-
-    </aside>
-
-
-    <!-- MAIN CHAT -->
-
-    <section class="chat-area">
-
-      <!-- CHAT HEADER -->
-
-      <header class="chat-header">
-
-        <div
-          style="
-            display:flex;
-            align-items:center;
-            gap:10px;
-          "
-        >
-
-          <button
-            class="mobile-menu"
-            onclick="toggleSidebar()"
-            aria-label="Open menu"
-          >
-            ☰
-          </button>
-
-          <div class="chat-title">
-            New conversation
-          </div>
-
-        </div>
-
-
-        <select
-          id="modelSelector"
-          class="model-selector"
-        >
-
-          <option value="gemini">
-            NOVA
-          </option>
-
-        </select>
-
-      </header>
-
-
-      <!-- MESSAGES -->
-
-      <div
-        id="messages"
-        class="messages"
-      >
-
-        <div
-          id="welcome"
-          class="welcome"
-        >
-
-          <svg
-            class="welcome-logo"
-            viewBox="0 0 100 100"
-            fill="none"
-          >
-
-            <path
-              class="logo-hex"
-              d="
-                M50 5
-                L89 27.5
-                L89 72.5
-                L50 95
-                L11 72.5
-                L11 27.5
-                Z
-              "
-            />
-
-            <path
-              class="logo-loop"
-              d="
-                M31 50
-                C31 39 42 34 50 43
-                C58 52 69 47 69 38
-              "
-            />
-
-            <path
-              class="logo-loop"
-              d="
-                M31 62
-                C31 73 42 78 50 69
-                C58 60 69 65 69 56
-              "
-            />
-
-          </svg>
-
-
-          <h1>
-            How can I help?
-          </h1>
-
-
-          <p>
-            Ask NOVA anything.
-            Your AI workspace starts here.
-          </p>
-
-        </div>
-
-      </div>
-
-
-      <!-- COMPOSER -->
-
-      <div class="composer-area">
-
-        <div class="composer">
-
-          <button
-            class="composer-button"
-            title="Attach file"
-            aria-label="Attach file"
-          >
-            +
-          </button>
-
-
-          <textarea
-            id="messageInput"
-            placeholder="Ask NOVA anything..."
-            rows="1"
-          ></textarea>
-
-
-          <button
-            class="composer-button"
-            title="Voice"
-            aria-label="Voice"
-          >
-            ◉
-          </button>
-
-
-          <button
-            id="sendButton"
-            class="composer-button send-button"
-            onclick="sendMessage()"
-            title="Send"
-            aria-label="Send message"
-          >
-            ↑
-          </button>
-
-        </div>
-
-      </div>
-
-    </section>
-
-  </div>
-
-
-  <!-- ==================================================
-       JAVASCRIPT
-  ================================================== -->
-
-  <script>
-
-    /*
-      ==============================================
-      NOVA FRONTEND FOUNDATION
-      ==============================================
-    */
-
-
-    const landingPage =
-      document.getElementById("landingPage");
-
-    const workspace =
-      document.getElementById("workspace");
-
-    const sidebar =
-      document.getElementById("sidebar");
-
-    const messages =
-      document.getElementById("messages");
-
-    const input =
-      document.getElementById("messageInput");
-
-    const welcome =
-      document.getElementById("welcome");
-
-    const history =
-      document.getElementById("history");
-
-
-    /*
-      ==============================================
-      OPEN WORKSPACE
-      ==============================================
-    */
-
-    function openWorkspace() {
-
-      landingPage.style.display = "none";
-
-      workspace.classList.add("active");
-
-      input.focus();
-
-    }
-
-
-    /*
-      ==============================================
-      CLOSE WORKSPACE
-      ==============================================
-    */
-
-    function closeWorkspace() {
-
-      workspace.classList.remove("active");
-
-      landingPage.style.display = "block";
-
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-
-    }
-
-
-    /*
-      ==============================================
-      MOBILE SIDEBAR
-      ==============================================
-    */
-
-    function toggleSidebar() {
-
-      sidebar.classList.toggle("open");
-
-    }
-
-
-    /*
-      ==============================================
-      NEW CHAT
-      ==============================================
-    */
-
-    function newChat() {
-
-      messages.innerHTML = "";
-
-      messages.appendChild(
-        createWelcome()
-      );
-
-      document.querySelector(
-        ".chat-title"
-      ).textContent =
-        "New conversation";
-
-      input.value = "";
-
-      input.focus();
-
-    }
-
-
-    /*
-      ==============================================
-      WELCOME SCREEN
-      ==============================================
-    */
-
-    function createWelcome() {
-
-      const element =
-        document.createElement("div");
-
-      element.className =
-        "welcome";
-
-      element.innerHTML = `
-
-        <svg
-          class="welcome-logo"
-          viewBox="0 0 100 100"
-          fill="none"
-        >
-
-          <path
-            class="logo-hex"
-            d="
-              M50 5
-              L89 27.5
-              L89 72.5
-              L50 95
-              L11 72.5
-              L11 27.5
-              Z
-            "
-          />
-
-          <path
-            class="logo-loop"
-            d="
-              M31 50
-              C31 39 42 34 50 43
-              C58 52 69 47 69 38
-            "
-          />
-
-          <path
-            class="logo-loop"
-            d="
-              M31 62
-              C31 73 42 78 50 69
-              C58 60 69 65 69 56
-            "
-          />
-
-        </svg>
-
-        <h1>
-          How can I help?
-        </h1>
-
-        <p>
-          Ask NOVA anything.
-          Your AI workspace starts here.
-        </p>
-
-      `;
-
-      return element;
-
-    }
-
-
-    /*
-      ==============================================
-      SEND MESSAGE
-      ==============================================
-    */
-
-    function sendMessage() {
-
-      const text =
-        input.value.trim();
-
-      if (!text) {
-        return;
-      }
-
-
-      if (welcome) {
-
-        welcome.remove();
-
-      }
-
-
-      addMessage(
-        "You",
-        text
-      );
-
-
-      input.value = "";
-
-      input.style.height = "42px";
-
-
-      /*
-        Gemini will be connected in a
-        later stage.
-
-        We intentionally do NOT fake
-        an AI response here.
-      */
-
-    }
-
-
-    /*
-      ==============================================
-      ADD MESSAGE
-      ==============================================
-    */
-
-    function addMessage(
-      name,
-      text
-    ) {
-
-      const message =
-        document.createElement("div");
-
-      message.className =
-        "message";
-
-
-      const avatar =
-        document.createElement("div");
-
-      avatar.className =
-        "message-avatar";
-
-      avatar.textContent =
-        name === "You"
-          ? "U"
-          : "✦";
-
-
-      const content =
-        document.createElement("div");
-
-      content.className =
-        "message-content";
-
-
-      const title =
-        document.createElement("div");
-
-      title.className =
-        "message-name";
-
-      title.textContent =
-        name;
-
-
-      const body =
-        document.createElement("div");
-
-      body.textContent =
-        text;
-
-
-      content.appendChild(title);
-
-      content.appendChild(body);
-
-
-      message.appendChild(avatar);
-
-      message.appendChild(content);
-
-
-      messages.appendChild(message);
-
-
-      messages.scrollTo({
-        top: messages.scrollHeight,
-        behavior: "smooth"
-      });
-
-    }
-
-
-    /*
-      ==============================================
-      ENTER TO SEND
-      ==============================================
-    */
-
-    input.addEventListener(
-      "keydown",
-      function(event) {
-
-        if (
-          event.key === "Enter" &&
-          !event.shiftKey
-        ) {
-
-          event.preventDefault();
-
-          sendMessage();
-
-        }
-
-      }
-    );
-
-
-    /*
-      ==============================================
-      AUTO RESIZE TEXTAREA
-      ==============================================
-    */
-
-    input.addEventListener(
-      "input",
-      function() {
-
-        this.style.height = "auto";
-
-        this.style.height =
-          Math.min(
-            this.scrollHeight,
-            150
-          ) + "px";
-
-      }
-    );
-
-
-    /*
-      ==============================================
-      EXPLORE
-      ==============================================
-    */
-
-    function scrollToTools() {
-
-      document
-        .getElementById("tools")
-        .scrollIntoView({
-          behavior: "smooth"
-        });
-
-    }
-
-
-    /*
-      ==============================================
-      SEARCH
-      ==============================================
-    */
-
-    document
-      .getElementById("searchChats")
-      .addEventListener(
-        "input",
-        function() {
-
-          const query =
-            this.value.toLowerCase();
-
-          document
-            .querySelectorAll(
-              ".history-item"
-            )
-            .forEach(
-              item => {
-
-                item.style.display =
-                  item.textContent
-                    .toLowerCase()
-                    .includes(query)
-                    ? "block"
-                    : "none";
-
-              }
-            );
-
-        }
-      );
-
-  </script>
-
-</body>
-</html>
