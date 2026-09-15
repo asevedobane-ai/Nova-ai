@@ -1,96 +1,732 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-  <title>NOVA — AI that works with you</title>
+    <title>NOVA — AI that works with you.</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="app.css">
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
-    rel="stylesheet"
-  >
-
-  <link rel="stylesheet" href="app.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
 </head>
 
 <body>
 
-  <!-- =========================
-       LANDING PAGE
-  ========================== -->
+    <!-- NAVIGATION -->
+    <nav class="navbar">
 
-  <div id="landing">
+        <button class="logo" onclick="goHome()">
+            <span class="logo-mark">
+                <span class="logo-infinity">∞</span>
+            </span>
 
-    <header class="navbar">
+            <span>NOVA</span>
+        </button>
 
-      <a href="#" class="brand">
-        <div class="nova-mark">
-          <span></span>
+        <div class="nav-links">
+            <button onclick="scrollToSection('features')">
+                Features
+            </button>
+
+            <button onclick="scrollToSection('about')">
+                About
+            </button>
+
+            <button class="nav-start" onclick="openWorkspace()">
+                Start Creating
+            </button>
         </div>
 
-        <span class="brand-name">NOVA</span>
-      </a>
+    </nav>
 
-      <nav class="nav-center">
-        <a href="#capabilities">Capabilities</a>
-        <a href="#experience">Experience</a>
-        <a href="#about">About</a>
-      </nav>
 
-      <div class="nav-actions">
+    <!-- LANDING PAGE -->
+    <main id="landing">
 
-        <button
-          class="nav-login"
-          type="button"
-          onclick="openWorkspace()"
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="status-pill">
+                    <span class="status-dot"></span>
+                    NOVA AI
+                </div>
+
+                <h1>
+                    AI that works
+                    <span>with you.</span>
+                </h1>
+
+                <p>
+                    Ask questions, create content, analyze ideas,
+                    solve problems, and explore new possibilities
+                    with NOVA.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button
+                        class="primary-button"
+                        onclick="openWorkspace()"
+                    >
+                        Start Creating
+                        <span>→</span>
+                    </button>
+
+                    <button
+                        class="secondary-button"
+                        onclick="scrollToSection('features')"
+                    >
+                        Explore AI
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- AI PREVIEW -->
+            <div class="preview-wrapper">
+
+                <div class="preview-window">
+
+                    <div class="preview-top">
+
+                        <div class="preview-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+                        <div class="preview-title">
+                            NOVA
+                        </div>
+
+                    </div>
+
+                    <div class="preview-body">
+
+                        <div class="preview-message">
+                            <div class="preview-avatar">
+                                N
+                            </div>
+
+                            <div>
+                                <strong>NOVA</strong>
+
+                                <p>
+                                    What would you like to create
+                                    today?
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="preview-input">
+                            <span>Ask NOVA anything...</span>
+                            <b>↑</b>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FEATURES -->
+        <section
+            class="section"
+            id="features"
         >
-          Open NOVA
-        </button>
 
-        <button
-          class="nav-start"
-          type="button"
-          onclick="openWorkspace()"
+            <div class="section-heading">
+
+                <span>CAPABILITIES</span>
+
+                <h2>
+                    One workspace.
+                    <br>
+                    Endless possibilities.
+                </h2>
+
+                <p>
+                    NOVA brings useful AI tools into one
+                    clean workspace.
+                </p>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+                <article class="feature-card">
+                    <div class="feature-icon">✦</div>
+
+                    <h3>Writing</h3>
+
+                    <p>
+                        Draft, rewrite, brainstorm, and
+                        improve your ideas.
+                    </p>
+                </article>
+
+
+                <article class="feature-card">
+                    <div class="feature-icon">⌘</div>
+
+                    <h3>Code</h3>
+
+                    <p>
+                        Understand code, solve problems,
+                        and build projects.
+                    </p>
+                </article>
+
+
+                <article class="feature-card">
+                    <div class="feature-icon">◫</div>
+
+                    <h3>Analysis</h3>
+
+                    <p>
+                        Break down information and
+                        discover useful insights.
+                    </p>
+                </article>
+
+
+                <article class="feature-card">
+                    <div class="feature-icon">◎</div>
+
+                    <h3>Ideas</h3>
+
+                    <p>
+                        Turn rough thoughts into clear,
+                        creative possibilities.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+        <section
+            class="section about-section"
+            id="about"
         >
-          Get started
-          <span>↗</span>
-        </button>
 
-      </div>
+            <div class="about-card">
 
-    </header>
+                <div class="about-label">
+                    ABOUT NOVA
+                </div>
+
+                <h2>
+                    Intelligence without
+                    the noise.
+                </h2>
+
+                <p>
+                    NOVA is designed to make AI feel
+                    straightforward, useful, and personal.
+                    No clutter. Just the tools you need.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
 
 
-    <!-- =========================
-         HERO
-    ========================== -->
+    <!-- WORKSPACE -->
+    <main
+        id="workspace"
+        class="workspace hidden"
+    >
 
-    <main>
+        <aside class="sidebar">
 
-      <section class="hero">
+            <div class="sidebar-top">
 
-        <div class="hero-content">
+                <button
+                    class="workspace-logo"
+                    onclick="goHome()"
+                >
+                    <span class="mini-logo">∞</span>
+                    NOVA
+                </button>
 
-          <div class="status-pill">
-            <span class="status-dot"></span>
-            NOVA is ready
-          </div>
+                <button
+                    class="new-chat"
+                    onclick="newChat()"
+                >
+                    <span>＋</span>
+                    New conversation
+                </button>
 
-          <h1>
-            Intelligence,
-            <span>without the noise.</span>
-          </h1>
+            </div>
 
-          <p class="hero-description">
-            NOVA brings writing, analysis, coding, brainstorming,
-            and everyday questions into one focused AI workspace.
-          </p>
 
-          <div class="hero-actions">
+            <div class="history">
 
-            <button
-              class="hero-primary
+                <div class="history-label">
+                    RECENT
+                </div>
+
+                <div
+                    id="history-list"
+                    class="history-list"
+                >
+                    <div class="empty-history">
+                        No conversations yet.
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-bottom">
+
+                <button onclick="alert('Settings coming soon.')">
+                    ⚙ Settings
+                </button>
+
+                <button onclick="goHome()">
+                    ← Back to NOVA
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <section class="chat-area">
+
+            <header class="chat-header">
+
+                <div>
+                    <div class="chat-title">
+                        New conversation
+                    </div>
+
+                    <div class="chat-subtitle">
+                        NOVA AI
+                    </div>
+                </div>
+
+                <button
+                    class="mobile-menu"
+                    onclick="toggleSidebar()"
+                >
+                    ☰
+                </button>
+
+            </header>
+
+
+            <div
+                id="messages"
+                class="messages"
+            >
+
+                <div class="welcome">
+
+                    <div class="welcome-logo">
+                        ∞
+                    </div>
+
+                    <h2>
+                        How can I help?
+                    </h2>
+
+                    <p>
+                        Ask NOVA anything or start with
+                        one of these ideas.
+                    </p>
+
+
+                    <div class="suggestions">
+
+                        <button onclick="useSuggestion('Help me brainstorm a game idea')">
+                            <span>✦</span>
+                            Brainstorm an idea
+                        </button>
+
+                        <button onclick="useSuggestion('Explain something to me simply')">
+                            <span>?</span>
+                            Explain something
+                        </button>
+
+                        <button onclick="useSuggestion('Help me write something')">
+                            <span>✎</span>
+                            Help me write
+                        </button>
+
+                        <button onclick="useSuggestion('Help me with some code')">
+                            <span>⌘</span>
+                            Help with code
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="composer-wrapper">
+
+                <div class="composer">
+
+                    <textarea
+                        id="message-input"
+                        placeholder="Message NOVA..."
+                        rows="1"
+                    ></textarea>
+
+                    <button
+                        id="send-button"
+                        onclick="sendMessage()"
+                        aria-label="Send message"
+                    >
+                        ↑
+                    </button>
+
+                </div>
+
+                <div class="composer-note">
+                    NOVA can make mistakes. Check important information.
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        function openWorkspace() {
+            document.getElementById("landing")
+                .classList.add("hidden");
+
+            document.getElementById("workspace")
+                .classList.remove("hidden");
+
+            window.scrollTo({
+                top: 0,
+                behavior: "instant"
+            });
+
+            document.getElementById("message-input")
+                ?.focus();
+        }
+
+
+        function goHome() {
+            document.getElementById("workspace")
+                .classList.add("hidden");
+
+            document.getElementById("landing")
+                .classList.remove("hidden");
+
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+
+
+        function scrollToSection(id) {
+
+            document.getElementById(id)
+                ?.scrollIntoView({
+                    behavior: "smooth"
+                });
+        }
+
+
+        function toggleSidebar() {
+
+            document.querySelector(".sidebar")
+                ?.classList.toggle("sidebar-open");
+        }
+
+
+        function newChat() {
+
+            const messages =
+                document.getElementById("messages");
+
+            messages.innerHTML = `
+                <div class="welcome">
+
+                    <div class="welcome-logo">
+                        ∞
+                    </div>
+
+                    <h2>
+                        How can I help?
+                    </h2>
+
+                    <p>
+                        Ask NOVA anything or start with
+                        one of these ideas.
+                    </p>
+
+                    <div class="suggestions">
+
+                        <button onclick="useSuggestion('Help me brainstorm a game idea')">
+                            <span>✦</span>
+                            Brainstorm an idea
+                        </button>
+
+                        <button onclick="useSuggestion('Explain something to me simply')">
+                            <span>?</span>
+                            Explain something
+                        </button>
+
+                        <button onclick="useSuggestion('Help me write something')">
+                            <span>✎</span>
+                            Help me write
+                        </button>
+
+                        <button onclick="useSuggestion('Help me with some code')">
+                            <span>⌘</span>
+                            Help with code
+                        </button>
+
+                    </div>
+
+                </div>
+            `;
+
+            document.getElementById("message-input")
+                .value = "";
+
+            document.getElementById("message-input")
+                .focus();
+        }
+
+
+        function useSuggestion(text) {
+
+            const input =
+                document.getElementById("message-input");
+
+            input.value = text;
+
+            input.focus();
+
+            sendMessage();
+        }
+
+
+        function addMessage(text, type) {
+
+            const messages =
+                document.getElementById("messages");
+
+            const message =
+                document.createElement("div");
+
+            message.className =
+                "message " + type;
+
+            message.innerHTML = `
+                <div class="message-avatar">
+                    ${type === "user" ? "You" : "N"}
+                </div>
+
+                <div class="message-content">
+                    ${escapeHTML(text)}
+                </div>
+            `;
+
+            messages.appendChild(message);
+
+            messages.scrollTop =
+                messages.scrollHeight;
+        }
+
+
+        function escapeHTML(text) {
+
+            const div =
+                document.createElement("div");
+
+            div.textContent = text;
+
+            return div.innerHTML;
+        }
+
+
+        async function sendMessage() {
+
+            const input =
+                document.getElementById("message-input");
+
+            const button =
+                document.getElementById("send-button");
+
+            const text =
+                input.value.trim();
+
+            if (!text) return;
+
+            addMessage(text, "user");
+
+            input.value = "";
+
+            button.disabled = true;
+
+            addMessage(
+                "NOVA is thinking...",
+                "assistant"
+            );
+
+            try {
+
+                const response =
+                    await fetch("/api/chat", {
+
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body: JSON.stringify({
+                            message: text
+                        })
+                    });
+
+
+                const data =
+                    await response.json();
+
+
+                const messages =
+                    document.getElementById("messages");
+
+                const assistantMessages =
+                    messages.querySelectorAll(
+                        ".message.assistant"
+                    );
+
+                const lastAssistant =
+                    assistantMessages[
+                        assistantMessages.length - 1
+                    ];
+
+
+                if (!response.ok) {
+
+                    lastAssistant
+                        .querySelector(
+                            ".message-content"
+                        )
+                        .textContent =
+                        data.error ||
+                        "Something went wrong.";
+
+                    return;
+                }
+
+
+                lastAssistant
+                    .querySelector(
+                        ".message-content"
+                    )
+                    .textContent =
+                    data.reply ||
+                    "I didn't receive a response.";
+
+            } catch (error) {
+
+                const messages =
+                    document.getElementById("messages");
+
+                const assistantMessages =
+                    messages.querySelectorAll(
+                        ".message.assistant"
+                    );
+
+                const lastAssistant =
+                    assistantMessages[
+                        assistantMessages.length - 1
+                    ];
+
+
+                if (lastAssistant) {
+
+                    lastAssistant
+                        .querySelector(
+                            ".message-content"
+                        )
+                        .textContent =
+                        "NOVA couldn't connect to the AI server.";
+                }
+
+            } finally {
+
+                button.disabled = false;
+
+                input.focus();
+            }
+        }
+
+
+        const messageInput =
+            document.getElementById("message-input");
+
+
+        messageInput.addEventListener(
+            "keydown",
+            function(event) {
+
+                if (
+                    event.key === "Enter" &&
+                    !event.shiftKey
+                ) {
+
+                    event.preventDefault();
+
+                    sendMessage();
+                }
+            }
+        );
+
+
+        messageInput.addEventListener(
+            "input",
+            function() {
+
+                this.style.height = "auto";
+
+                this.style.height =
+                    Math.min(
+                        this.scrollHeight,
+                        180
+                    ) + "px";
+            }
+        );
+
+    </script>
+
+</body>
+</html>
